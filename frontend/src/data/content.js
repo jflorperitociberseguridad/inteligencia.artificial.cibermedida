@@ -347,6 +347,53 @@ export const PROCESS_STEPS = [
   },
 ];
 
+export const HOME_FEATURES = [
+  {
+    image: "code",
+    kicker: "Agentes",
+    title: "Agentes que trabajan mientras tu equipo descansa",
+    text: "Un agente conversacional bien entrenado atiende consultas, clasifica solicitudes y prepara respuestas a cualquier hora. No sustituye a tu equipo: le devuelve las horas que hoy se van en tareas repetitivas, y escala a una persona cuando el tema lo requiere.",
+    points: ["Atención ininterrumpida sin ampliar plantilla", "Respuestas basadas en tu información real", "Escalado a personas con contexto completo"],
+  },
+  {
+    image: "analyst",
+    kicker: "Datos",
+    title: "Tus datos, por fin hablando claro",
+    text: "La mayoría de organizaciones guardan años de información que nadie consulta. La analítica con IA detecta patrones, anticipa demanda y señala anomalías antes de que se conviertan en problemas, presentada en paneles que cualquier directivo entiende.",
+    points: ["Detección de anomalías en tiempo real", "Previsión de demanda y comportamiento", "Paneles comprensibles sin conocimientos técnicos"],
+  },
+  {
+    image: "serverRack",
+    kicker: "Seguridad",
+    title: "La seguridad como cimiento de toda IA",
+    text: "Cada agente y cada automatización tocan datos sensibles. Por eso ningún proyecto de IA sale de Cibermedida sin gobierno del dato, control de accesos y vigilancia continua: innovar deprisa solo funciona cuando la base está protegida.",
+    points: ["Gobierno del dato y cumplimiento del AI Act", "Monitorización 24/7 de sistemas y modelos", "Evidencias auditables de cada control"],
+  },
+];
+
+export const FAQ_ITEMS = [
+  {
+    q: "¿Necesito conocimientos técnicos para implantar IA en mi empresa?",
+    a: "No. Nuestro trabajo es precisamente traducir la tecnología a tu operativa diaria: tú aportas el conocimiento de tu negocio y nosotros nos encargamos de la parte técnica, la formación de tu equipo y el mantenimiento.",
+  },
+  {
+    q: "¿Cuánto tarda un primer proyecto de inteligencia artificial?",
+    a: "Depende del alcance, y por eso nunca prometemos plazos sin conocer el caso. En la fase de descubrimiento analizamos tu situación y te entregamos una estimación honesta de tiempos, costes e impacto antes de comprometer nada.",
+  },
+  {
+    q: "¿La IA que implantáis cumple con el RGPD y el AI Act?",
+    a: "Sí. Cada despliegue incluye gobierno del dato, evaluación de riesgos según el AI Act y medidas de protección conforme al RGPD. Además, documentamos todo para que el cumplimiento sea demostrable ante cualquier auditoría.",
+  },
+  {
+    q: "¿Trabajáis con empresas pequeñas o solo con grandes organizaciones?",
+    a: "Trabajamos con empresas, centros formativos y administraciones de cualquier tamaño. El catálogo es modular: puedes empezar con una consultoría puntual o un único agente y crecer cuando veas el retorno.",
+  },
+  {
+    q: "¿Qué hago si creo que he sufrido un ciberataque?",
+    a: "No apagues los equipos ni borres nada: la memoria contiene evidencias clave. Usa el botón rojo 'Ataque en curso' o el formulario de contacto indicándolo en el mensaje, y priorizaremos tu solicitud para guiar la contención.",
+  },
+];
+
 export const LEGAL_PAGES = {
   "aviso-legal": {
     title: "Aviso Legal",

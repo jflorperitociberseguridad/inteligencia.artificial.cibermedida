@@ -30,7 +30,8 @@ export const Hero = () => {
           data-testid="hero-video"
           className="w-full h-full object-cover opacity-25"
         >
-          <source src="/media/hero-video.mp4" type="video/mp4" />
+          <source src="/media/hero-video-web.mp4" type="video/mp4" />
+          <source src="/media/hero-video.webm" type="video/webm" />
         </video>
         <div className="absolute inset-0 bg-gradient-to-b from-[#14163C]/70 via-[#14163C]/85 to-[#14163C]" />
         <div className="absolute inset-0" style={{ background: "radial-gradient(ellipse at 50% 0%, rgba(63,224,242,0.18) 0%, rgba(20,22,60,0) 70%), radial-gradient(ellipse at 15% 85%, rgba(168,124,255,0.16) 0%, rgba(20,22,60,0) 60%)" }} />

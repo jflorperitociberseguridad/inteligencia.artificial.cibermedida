@@ -28,6 +28,11 @@
 4. Formulario → email a jfloradmin@cibermedida.es
 5. Responsive + animaciones premium (framer-motion, lenis)
 
+## Implementado (2026-10-28, fase 7)
+- Vídeo corporativo del usuario en la portada: reproducción en bucle verificada (currentTime avanza). Procesado: 13MB→2,9MB H.264 yuv420p faststart + fallback WebM/VP9 (el Chromium de preview no soporta H.264, por eso el doble formato); póster de respaldo mantenido
+- Más contenido en portada: sección "La IA en la práctica" (3 filas alternas imagen+texto con parallax: Agentes, Datos, Seguridad) y sección de Preguntas Frecuentes (acordeón de 5 Q&A alineadas con el JSON-LD)
+- Herramienta: ffmpeg vía imageio-ffmpeg (pip)
+
 ## Implementado (2026-10-28, fase 6)
 - Logotipo ORIGINAL del usuario (logo-full.png: huella + CIBERMEDIDA + chip IA) en navbar, footer y cabecera del chatbot; favicon/apple-touch-icon con la huella recortada
 - Nueva paleta global al tono del logo: fondos índigo (#14163C base, #1B1E4E, #242764 cards), cian #3FE0F2, texto lavanda #B9C3EC, acento morado (radial rgba(168,124,255)) en el hero

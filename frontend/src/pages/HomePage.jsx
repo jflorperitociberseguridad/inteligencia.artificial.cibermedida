@@ -5,8 +5,10 @@ import { Navbar, goToContact } from "@/components/Navbar";
 import { Hero } from "@/components/Hero";
 import { Marquee } from "@/components/Marquee";
 import { StatsStrip } from "@/components/StatsStrip";
+import { Features } from "@/components/Features";
 import { RiskQuiz } from "@/components/RiskQuiz";
 import { Pillars } from "@/components/Pillars";
+import { Faq } from "@/components/Faq";
 import { Footer } from "@/components/Footer";
 import { SectionHeading, Reveal } from "@/components/Reveal";
 import { HOME_HIGHLIGHTS } from "@/data/content";
@@ -57,6 +59,7 @@ export default function HomePage() {
           </div>
         </section>
 
+        <Features />
         <RiskQuiz />
 
         <section data-testid="home-cases-teaser" className="relative bg-[#1B1E4E] py-20">
@@ -83,6 +86,7 @@ export default function HomePage() {
         </section>
 
         <Pillars />
+        <Faq />
 
         <section data-testid="home-cta-banner" className="relative bg-[#1B1E4E] py-20 overflow-hidden">
           <div className="absolute inset-0 pointer-events-none" style={{ background: "radial-gradient(ellipse at 50% 100%, rgba(63,224,242,0.12) 0%, rgba(27,30,78,0) 60%)" }} />
