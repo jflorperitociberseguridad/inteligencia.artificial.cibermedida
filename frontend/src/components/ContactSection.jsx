@@ -10,7 +10,7 @@ const API = `${process.env.REACT_APP_BACKEND_URL}/api`;
 const EMPTY = { name: "", company: "", phone: "", email: "", service: "", message: "" };
 
 const inputCls =
-  "w-full bg-[#0A1128] border border-[#62E7EF]/20 rounded-xl px-4 py-3 text-sm text-[#EEFBFF] placeholder:text-[#5C7D99] focus:outline-none focus:border-[#62E7EF] focus:ring-1 focus:ring-[#62E7EF]/40 transition-all duration-300";
+  "w-full bg-[#1B1E4E] border border-[#3FE0F2]/20 rounded-xl px-4 py-3 text-sm text-[#EEFBFF] placeholder:text-[#7D86C2] focus:outline-none focus:border-[#3FE0F2] focus:ring-1 focus:ring-[#3FE0F2]/40 transition-all duration-300";
 
 export const ContactSection = () => {
   const [form, setForm] = useState(EMPTY);
@@ -52,8 +52,8 @@ export const ContactSection = () => {
   };
 
   return (
-    <section id="contacto" data-testid="contact-section" className="relative bg-[#0A1128] py-24 sm:py-32 overflow-hidden">
-      <div className="absolute inset-0 pointer-events-none" style={{ background: "radial-gradient(ellipse at 50% 100%, rgba(98,231,239,0.1) 0%, rgba(10,17,40,0) 60%)" }} />
+    <section id="contacto" data-testid="contact-section" className="relative bg-[#1B1E4E] py-24 sm:py-32 overflow-hidden">
+      <div className="absolute inset-0 pointer-events-none" style={{ background: "radial-gradient(ellipse at 50% 100%, rgba(63,224,242,0.1) 0%, rgba(27,30,78,0) 60%)" }} />
       <div className="relative max-w-7xl mx-auto px-5 sm:px-8 grid lg:grid-cols-2 gap-14">
         <div>
           <SectionHeading
@@ -63,11 +63,11 @@ export const ContactSection = () => {
             description="Cuéntanos qué quieres conseguir con la IA y te proponemos los primeros pasos, sin compromiso. Si has sufrido un ataque, indícalo en el mensaje y priorizaremos tu solicitud."
           />
           <Reveal delay={0.1}>
-            <div className="flex items-start gap-4 bg-[#102B49] border border-[#62E7EF]/15 rounded-2xl p-6" data-testid="contact-assurance-card">
+            <div className="flex items-start gap-4 bg-[#242764] border border-[#3FE0F2]/15 rounded-2xl p-6" data-testid="contact-assurance-card">
               <ShieldCheck size={24} className="text-[#06D6A0] shrink-0 mt-0.5" />
               <div>
                 <h2 className="font-heading text-base font-semibold text-[#EEFBFF]">Confidencialidad garantizada</h2>
-                <p className="mt-1 text-sm text-[#A3C3D9] leading-relaxed">
+                <p className="mt-1 text-sm text-[#B9C3EC] leading-relaxed">
                   Toda la información que compartas se trata con confidencialidad y conforme al RGPD. Nunca te pediremos contraseñas ni datos bancarios por email.
                 </p>
               </div>
@@ -76,7 +76,7 @@ export const ContactSection = () => {
         </div>
 
         <Reveal delay={0.15}>
-          <form onSubmit={submit} className="bg-[#102B49] border border-[#62E7EF]/20 rounded-2xl p-7 sm:p-9 flex flex-col gap-4" data-testid="contact-form">
+          <form onSubmit={submit} className="bg-[#242764] border border-[#3FE0F2]/20 rounded-2xl p-7 sm:p-9 flex flex-col gap-4" data-testid="contact-form">
             <div className="grid sm:grid-cols-2 gap-4">
               <input required minLength={2} data-testid="contact-name-input" placeholder="Nombre *" value={form.name} onChange={set("name")} className={inputCls} />
               <input data-testid="contact-company-input" placeholder="Empresa" value={form.company} onChange={set("company")} className={inputCls} />
@@ -89,7 +89,7 @@ export const ContactSection = () => {
               data-testid="contact-service-select"
               value={form.service}
               onChange={set("service")}
-              className={`${inputCls} appearance-none ${form.service ? "" : "text-[#5C7D99]"}`}
+              className={`${inputCls} appearance-none ${form.service ? "" : "text-[#7D86C2]"}`}
             >
               <option value="" disabled>Tipo de servicio</option>
               {SERVICE_OPTIONS.map((o) => (
@@ -110,7 +110,7 @@ export const ContactSection = () => {
               type="submit"
               disabled={sending}
               data-testid="contact-submit-button"
-              className="mt-1 inline-flex items-center justify-center gap-2 text-sm font-semibold text-[#071725] bg-[#62E7EF] rounded-full px-7 py-3.5 hover:bg-[#7DE1E2] hover:shadow-[0_0_32px_rgba(98,231,239,0.4)] disabled:opacity-60 disabled:cursor-not-allowed transition-all duration-300"
+              className="mt-1 inline-flex items-center justify-center gap-2 text-sm font-semibold text-[#14163C] bg-[#3FE0F2] rounded-full px-7 py-3.5 hover:bg-[#7FEBF8] hover:shadow-[0_0_32px_rgba(63,224,242,0.4)] disabled:opacity-60 disabled:cursor-not-allowed transition-all duration-300"
             >
               {sending ? <Loader2 size={16} className="animate-spin" /> : <Send size={16} />}
               {sending ? "Enviando…" : "Enviar solicitud"}

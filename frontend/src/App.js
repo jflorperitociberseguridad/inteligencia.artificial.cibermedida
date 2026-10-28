@@ -44,7 +44,7 @@ function App() {
   }, []);
 
   return (
-    <div className="bg-[#071725] min-h-screen" data-testid="cibermedida-app">
+    <div className="bg-[#14163C] min-h-screen" data-testid="cibermedida-app">
       <HelmetProvider>
         <BrowserRouter>
           <ScrollToTop />
@@ -66,8 +66,8 @@ function App() {
         position="bottom-right"
         toastOptions={{
           style: {
-            background: "#102B49",
-            border: "1px solid rgba(98,231,239,0.3)",
+            background: "#242764",
+            border: "1px solid rgba(63,224,242,0.3)",
             color: "#EEFBFF",
           },
         }}

@@ -28,6 +28,17 @@
 4. Formulario → email a jfloradmin@cibermedida.es
 5. Responsive + animaciones premium (framer-motion, lenis)
 
+## Implementado (2026-10-28, fase 6)
+- Logotipo ORIGINAL del usuario (logo-full.png: huella + CIBERMEDIDA + chip IA) en navbar, footer y cabecera del chatbot; favicon/apple-touch-icon con la huella recortada
+- Nueva paleta global al tono del logo: fondos índigo (#14163C base, #1B1E4E, #242764 cards), cian #3FE0F2, texto lavanda #B9C3EC, acento morado (radial rgba(168,124,255)) en el hero
+- Verificado: desktop + móvil (375px), páginas internas, footer y chat con el nuevo tono
+- SIGUE PENDIENTE: el usuario no ha subido el vídeo corporativo (solo el logo) — el hero espera /media/hero-video.mp4 con póster de respaldo
+
+## Implementado (2026-10-28, fase 5)
+- Logo real de Cibermedida (huella digital cian/púrpura, archivo subido por el usuario) aplicado en navbar, footer, cabecera del chatbot, favicon.png y apple-touch-icon (procesado con PIL: logo-mark.png 574px, logo-full.png)
+- Hero preparado para vídeo corporativo en bucle: <video autoplay muted loop playsInline> con poster de respaldo; espera el archivo /media/hero-video.mp4 que el usuario debe subir (solo adjuntó el logo)
+- Verificado: logo visible en navbar/footer/chat, hero muestra el póster hasta que llegue el mp4
+
 ## Implementado (2026-10-28, fase 4)
 - Nueva página /casos-de-exito: caso destacado (Aula Virtual) con parallax, grid de 5 proyectos reales del ecosistema (chatbot, Signados, Turismo, Markitplace, Ikas Txiki), línea de proceso en 4 fases y CTA; enlace añadido al header, footer y teaser en portada
 - Diseño reforzado: parallax en imagen destacada, timeline con iconos, copy alineado al enfoque IA en toda la web (pillars incluidos)

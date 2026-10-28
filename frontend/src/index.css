@@ -37,7 +37,7 @@
         scroll-behavior: auto;
     }
     body {
-        @apply bg-[#071725] text-[#EEFBFF] antialiased;
+        @apply bg-[#14163C] text-[#EEFBFF] antialiased;
         font-family: 'Plus Jakarta Sans', sans-serif;
         overflow-x: hidden;
     }
@@ -49,10 +49,10 @@
         width: 10px;
     }
     ::-webkit-scrollbar-track {
-        background: #071725;
+        background: #14163C;
     }
     ::-webkit-scrollbar-thumb {
-        background: #102B49;
+        background: #242764;
         border-radius: 5px;
     }
     ::-webkit-scrollbar-thumb:hover {

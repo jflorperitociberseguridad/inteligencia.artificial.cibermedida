@@ -14,7 +14,7 @@ export default function WhatIsPage() {
   const pillar = AI_PILLARS.find((p) => p.id === active);
 
   return (
-    <div className="bg-[#071725] min-h-screen" data-testid="whatis-page">
+    <div className="bg-[#14163C] min-h-screen" data-testid="whatis-page">
       <Seo
         title="Qué es la Inteligencia Artificial | Cibermedida"
         description="IA generativa, agentes, analítica e IA segura explicados sin jerga, con aplicaciones reales para empresas, centros formativos y administraciones."
@@ -24,14 +24,14 @@ export default function WhatIsPage() {
         <div className="max-w-7xl mx-auto px-5 sm:px-8">
           <div className="grid lg:grid-cols-2 gap-14 items-center">
             <Reveal className="relative order-2 lg:order-1">
-              <div className="relative rounded-2xl overflow-hidden border border-[#62E7EF]/20 scanline" data-testid="whatis-image-frame">
+              <div className="relative rounded-2xl overflow-hidden border border-[#3FE0F2]/20 scanline" data-testid="whatis-image-frame">
                 <img src={IMAGES.code} alt="Modelos de inteligencia artificial en funcionamiento" className="w-full h-[420px] object-cover" loading="lazy" />
-                <div className="absolute inset-0 bg-gradient-to-tr from-[#071725]/80 via-transparent to-[#62E7EF]/10" />
-                <div className="absolute bottom-5 left-5 font-mono-cyber text-[11px] uppercase tracking-[0.2em] text-[#62E7EF] bg-[#071725]/80 backdrop-blur-sm border border-[#62E7EF]/30 rounded-full px-4 py-2">
+                <div className="absolute inset-0 bg-gradient-to-tr from-[#14163C]/80 via-transparent to-[#3FE0F2]/10" />
+                <div className="absolute bottom-5 left-5 font-mono-cyber text-[11px] uppercase tracking-[0.2em] text-[#3FE0F2] bg-[#14163C]/80 backdrop-blur-sm border border-[#3FE0F2]/30 rounded-full px-4 py-2">
                   Modelos en producción
                 </div>
               </div>
-              <div className="absolute -bottom-4 -right-4 w-24 h-24 border-r-2 border-b-2 border-[#62E7EF]/40 rounded-br-3xl pointer-events-none" />
+              <div className="absolute -bottom-4 -right-4 w-24 h-24 border-r-2 border-b-2 border-[#3FE0F2]/40 rounded-br-3xl pointer-events-none" />
             </Reveal>
 
             <div className="order-1 lg:order-2">
@@ -49,8 +49,8 @@ export default function WhatIsPage() {
                     onClick={() => setActive(p.id)}
                     className={`text-xs font-mono-cyber uppercase tracking-wider rounded-full px-4 py-2 border transition-all duration-300 ${
                       active === p.id
-                        ? "bg-[#62E7EF] text-[#071725] border-[#62E7EF] font-semibold"
-                        : "text-[#A3C3D9] border-[#62E7EF]/20 hover:border-[#62E7EF]/60"
+                        ? "bg-[#3FE0F2] text-[#14163C] border-[#3FE0F2] font-semibold"
+                        : "text-[#B9C3EC] border-[#3FE0F2]/20 hover:border-[#3FE0F2]/60"
                     }`}
                   >
                     {p.label}
@@ -64,11 +64,11 @@ export default function WhatIsPage() {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -10 }}
                   transition={{ duration: 0.35 }}
-                  className="bg-[#102B49] border border-[#62E7EF]/15 rounded-2xl p-7"
+                  className="bg-[#242764] border border-[#3FE0F2]/15 rounded-2xl p-7"
                   data-testid="whatis-tab-panel"
                 >
-                  <h2 className="font-heading text-xl font-medium text-[#62E7EF]">{pillar.title}</h2>
-                  <p className="mt-3 text-base text-[#A3C3D9] leading-relaxed">{pillar.text}</p>
+                  <h2 className="font-heading text-xl font-medium text-[#3FE0F2]">{pillar.title}</h2>
+                  <p className="mt-3 text-base text-[#B9C3EC] leading-relaxed">{pillar.text}</p>
                 </motion.div>
               </AnimatePresence>
             </div>
@@ -83,9 +83,9 @@ export default function WhatIsPage() {
             <div className="grid md:grid-cols-3 gap-6">
               {AI_APPLICATIONS.map((a, i) => (
                 <Reveal key={a.sector} delay={i * 0.08}>
-                  <div data-testid={`whatis-application-${i}`} className="card-glow h-full bg-[#102B49] border border-[#62E7EF]/15 rounded-2xl p-7">
+                  <div data-testid={`whatis-application-${i}`} className="card-glow h-full bg-[#242764] border border-[#3FE0F2]/15 rounded-2xl p-7">
                     <h3 className="font-heading text-lg font-semibold text-[#EEFBFF]">{a.sector}</h3>
-                    <p className="mt-3 text-sm text-[#A3C3D9] leading-relaxed">{a.text}</p>
+                    <p className="mt-3 text-sm text-[#B9C3EC] leading-relaxed">{a.text}</p>
                   </div>
                 </Reveal>
               ))}
@@ -94,7 +94,7 @@ export default function WhatIsPage() {
               <button
                 data-testid="whatis-cta"
                 onClick={() => goToContact(navigate, "Consultoría e implantación de IA")}
-                className="inline-flex items-center gap-2 text-sm font-semibold text-[#071725] bg-[#62E7EF] rounded-full px-8 py-3.5 hover:bg-[#7DE1E2] hover:shadow-[0_0_28px_rgba(98,231,239,0.4)] transition-all duration-300 group"
+                className="inline-flex items-center gap-2 text-sm font-semibold text-[#14163C] bg-[#3FE0F2] rounded-full px-8 py-3.5 hover:bg-[#7FEBF8] hover:shadow-[0_0_28px_rgba(63,224,242,0.4)] transition-all duration-300 group"
               >
                 Descubrir mi caso de uso
                 <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform duration-300" />

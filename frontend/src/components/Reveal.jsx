@@ -9,11 +9,11 @@ export const SectionHeading = ({ kicker, title, description, testId }) => (
     className="max-w-3xl mb-12"
     data-testid={testId}
   >
-    <span className="font-mono-cyber text-xs uppercase tracking-[0.25em] text-[#62E7EF]">{kicker}</span>
+    <span className="font-mono-cyber text-xs uppercase tracking-[0.25em] text-[#3FE0F2]">{kicker}</span>
     <h2 className="font-heading mt-3 text-2xl sm:text-3xl lg:text-4xl font-semibold tracking-tight text-[#EEFBFF] leading-tight">
       {title}
     </h2>
-    {description && <p className="mt-4 text-base text-[#A3C3D9] leading-relaxed">{description}</p>}
+    {description && <p className="mt-4 text-base text-[#B9C3EC] leading-relaxed">{description}</p>}
   </motion.div>
 );
 

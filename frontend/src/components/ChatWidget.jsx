@@ -97,7 +97,7 @@ export const ChatWidget = () => {
         initial={{ scale: 0, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
         transition={{ delay: 1.6, type: "spring", stiffness: 200 }}
-        className="fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full bg-[#62E7EF] text-[#071725] flex items-center justify-center shadow-[0_8px_30px_rgba(98,231,239,0.4)] hover:bg-[#7DE1E2] hover:scale-105 transition-all duration-300"
+        className="fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full bg-[#3FE0F2] text-[#14163C] flex items-center justify-center shadow-[0_8px_30px_rgba(63,224,242,0.4)] hover:bg-[#7FEBF8] hover:scale-105 transition-all duration-300"
         aria-label="Abrir asistente"
       >
         {open ? <X size={22} /> : <MessageCircle size={22} />}
@@ -111,14 +111,14 @@ export const ChatWidget = () => {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 24, scale: 0.96 }}
             transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
-            className="fixed bottom-24 right-6 z-50 w-[92vw] max-w-sm bg-[#102B49] border border-[#62E7EF]/30 rounded-2xl shadow-2xl overflow-hidden flex flex-col"
+            className="fixed bottom-24 right-6 z-50 w-[92vw] max-w-sm bg-[#242764] border border-[#3FE0F2]/30 rounded-2xl shadow-2xl overflow-hidden flex flex-col"
             style={{ height: "min(520px, 70vh)" }}
           >
-            <div className="flex items-center gap-3 px-5 py-4 bg-[#0A1128] border-b border-[#62E7EF]/15">
+            <div className="flex items-center gap-3 px-5 py-4 bg-[#1B1E4E] border-b border-[#3FE0F2]/15">
               <Logo size={30} />
               <div className="flex-1">
                 <p className="font-heading text-sm font-semibold text-[#EEFBFF]">Asistente Cibermedida</p>
-                <p className="flex items-center gap-1.5 text-[11px] text-[#5C7D99]">
+                <p className="flex items-center gap-1.5 text-[11px] text-[#7D86C2]">
                   <span className="pulse-dot inline-block w-1.5 h-1.5 rounded-full bg-[#06D6A0]" />
                   En línea
                 </p>
@@ -132,8 +132,8 @@ export const ChatWidget = () => {
                   data-testid={`chat-message-${m.role}-${i}`}
                   className={`max-w-[85%] rounded-2xl px-4 py-2.5 text-sm leading-relaxed whitespace-pre-wrap ${
                     m.role === "user"
-                      ? "ml-auto bg-[#62E7EF] text-[#071725] rounded-br-sm"
-                      : "bg-[#0A1128] text-[#EEFBFF] border border-[#62E7EF]/15 rounded-bl-sm"
+                      ? "ml-auto bg-[#3FE0F2] text-[#14163C] rounded-br-sm"
+                      : "bg-[#1B1E4E] text-[#EEFBFF] border border-[#3FE0F2]/15 rounded-bl-sm"
                   }`}
                 >
                   {m.content || (streaming && i === messages.length - 1 ? "…" : "")}
@@ -146,7 +146,7 @@ export const ChatWidget = () => {
                       key={c}
                       data-testid={`chat-chip-${i}`}
                       onClick={() => send(c)}
-                      className="text-xs text-[#62E7EF] border border-[#62E7EF]/30 rounded-full px-3 py-1.5 hover:bg-[#62E7EF]/10 transition-colors duration-300"
+                      className="text-xs text-[#3FE0F2] border border-[#3FE0F2]/30 rounded-full px-3 py-1.5 hover:bg-[#3FE0F2]/10 transition-colors duration-300"
                     >
                       {c}
                     </button>
@@ -157,7 +157,7 @@ export const ChatWidget = () => {
 
             <form
               onSubmit={(e) => { e.preventDefault(); send(); }}
-              className="flex items-center gap-2 px-4 py-3 bg-[#0A1128] border-t border-[#62E7EF]/15"
+              className="flex items-center gap-2 px-4 py-3 bg-[#1B1E4E] border-t border-[#3FE0F2]/15"
             >
               <input
                 data-testid="chat-input"
@@ -165,13 +165,13 @@ export const ChatWidget = () => {
                 onChange={(e) => setInput(e.target.value)}
                 placeholder="Escribe tu pregunta…"
                 maxLength={1000}
-                className="flex-1 bg-[#102B49] border border-[#62E7EF]/20 rounded-full px-4 py-2.5 text-sm text-[#EEFBFF] placeholder:text-[#5C7D99] focus:outline-none focus:border-[#62E7EF] transition-colors"
+                className="flex-1 bg-[#242764] border border-[#3FE0F2]/20 rounded-full px-4 py-2.5 text-sm text-[#EEFBFF] placeholder:text-[#7D86C2] focus:outline-none focus:border-[#3FE0F2] transition-colors"
               />
               <button
                 type="submit"
                 data-testid="chat-send-button"
                 disabled={streaming || !input.trim()}
-                className="w-10 h-10 rounded-full bg-[#62E7EF] text-[#071725] flex items-center justify-center hover:bg-[#7DE1E2] disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300"
+                className="w-10 h-10 rounded-full bg-[#3FE0F2] text-[#14163C] flex items-center justify-center hover:bg-[#7FEBF8] disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300"
                 aria-label="Enviar mensaje"
               >
                 {streaming ? <Loader2 size={16} className="animate-spin" /> : <Send size={16} />}

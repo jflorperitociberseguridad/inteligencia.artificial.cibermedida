@@ -5,7 +5,7 @@ import { ContactSection } from "@/components/ContactSection";
 
 export default function ContactPage() {
   return (
-    <div className="bg-[#071725] min-h-screen" data-testid="contact-page">
+    <div className="bg-[#14163C] min-h-screen" data-testid="contact-page">
       <Seo
         title="Contacto | Cibermedida"
         description="Solicita información sobre consultoría de IA, agentes conversacionales, automatización, formación o ciberseguridad. Respuesta priorizada si has sufrido un ataque."

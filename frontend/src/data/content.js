@@ -255,7 +255,7 @@ export const RISK_RESULTS = {
   },
   mid: {
     label: "Riesgo moderado",
-    color: "#62E7EF",
+    color: "#3FE0F2",
     service: "Consultoría e implantación de IA",
     text: "Usáis IA, pero sin un marco claro: ahí es donde se producen las fugas de datos y los usos fuera de norma. Una consultoría te dará el mapa: qué usos son seguros, cuáles hay que corregir y dónde está el retorno real.",
   },

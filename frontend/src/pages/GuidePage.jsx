@@ -13,7 +13,7 @@ export default function GuidePage() {
   const navigate = useNavigate();
 
   return (
-    <div className="bg-[#071725] min-h-screen" data-testid="guide-page">
+    <div className="bg-[#14163C] min-h-screen" data-testid="guide-page">
       <Seo
         title="Guía Práctica ante Incidentes de Seguridad | Cibermedida"
         description="Qué hacer en las primeras horas de un ciberataque: contención, preservación de evidencias, notificación a la AEPD en 72 horas y recuperación."
@@ -34,13 +34,13 @@ export default function GuidePage() {
                   <Siren size={22} className="text-[#FF6B6B]" />
                   <h2 className="font-heading text-lg font-semibold text-[#EEFBFF]">¿Sospechas de una brecha ahora mismo?</h2>
                 </div>
-                <p className="text-sm text-[#A3C3D9] leading-relaxed">
+                <p className="text-sm text-[#B9C3EC] leading-relaxed">
                   No apagues los equipos ni borres nada. Cuéntanos qué está ocurriendo y un especialista te indicará los primeros pasos de contención.
                 </p>
                 <button
                   data-testid="incident-emergency-cta"
                   onClick={() => goToContact(navigate, "He sufrido un ciberataque")}
-                  className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-[#071725] bg-[#FF6B6B] rounded-full px-6 py-3 hover:bg-[#FF8585] transition-all duration-300"
+                  className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-[#14163C] bg-[#FF6B6B] rounded-full px-6 py-3 hover:bg-[#FF8585] transition-all duration-300"
                 >
                   Reportar incidente
                 </button>
@@ -53,7 +53,7 @@ export default function GuidePage() {
               <Reveal key={s.step} delay={i * 0.07}>
                 <div
                   className={`border rounded-2xl overflow-hidden transition-colors duration-300 ${
-                    open === i ? "bg-[#102B49] border-[#62E7EF]/40" : "bg-[#102B49]/50 border-[#62E7EF]/15 hover:border-[#62E7EF]/30"
+                    open === i ? "bg-[#242764] border-[#3FE0F2]/40" : "bg-[#242764]/50 border-[#3FE0F2]/15 hover:border-[#3FE0F2]/30"
                   }`}
                   data-testid={`incident-step-${i}`}
                 >
@@ -62,13 +62,13 @@ export default function GuidePage() {
                     onClick={() => setOpen(open === i ? -1 : i)}
                     className="w-full flex items-center gap-5 p-6 text-left"
                   >
-                    <span className={`font-mono-cyber text-sm font-medium ${open === i ? "text-[#62E7EF]" : "text-[#5C7D99]"}`}>
+                    <span className={`font-mono-cyber text-sm font-medium ${open === i ? "text-[#3FE0F2]" : "text-[#7D86C2]"}`}>
                       {s.step}
                     </span>
                     <span className="font-heading flex-1 text-base sm:text-lg font-semibold text-[#EEFBFF]">{s.title}</span>
                     <ChevronDown
                       size={18}
-                      className={`text-[#62E7EF] transition-transform duration-300 ${open === i ? "rotate-180" : ""}`}
+                      className={`text-[#3FE0F2] transition-transform duration-300 ${open === i ? "rotate-180" : ""}`}
                     />
                   </button>
                   <AnimatePresence initial={false}>
@@ -79,7 +79,7 @@ export default function GuidePage() {
                         exit={{ height: 0, opacity: 0 }}
                         transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
                       >
-                        <p className="px-6 pb-6 pl-[4.25rem] text-sm text-[#A3C3D9] leading-relaxed" data-testid={`incident-step-body-${i}`}>
+                        <p className="px-6 pb-6 pl-[4.25rem] text-sm text-[#B9C3EC] leading-relaxed" data-testid={`incident-step-body-${i}`}>
                           {s.text}
                         </p>
                       </motion.div>

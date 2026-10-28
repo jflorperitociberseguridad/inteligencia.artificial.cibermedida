@@ -18,7 +18,7 @@ const ICONS = {
 export default function ServicesPage() {
   const navigate = useNavigate();
   return (
-    <div className="bg-[#071725] min-h-screen" data-testid="services-page">
+    <div className="bg-[#14163C] min-h-screen" data-testid="services-page">
       <Seo
         title="Servicios de IA y Ciberseguridad | Cibermedida"
         description="Consultoría e implantación de IA, agentes conversacionales, automatización de procesos, formación en IA, gobierno del dato y SOC 24/7."
@@ -40,16 +40,16 @@ export default function ServicesPage() {
                   <button
                     data-testid={`service-card-${i}`}
                     onClick={() => goToContact(navigate, s.title)}
-                    className="card-glow group w-full text-left h-full bg-[#102B49] border border-[#62E7EF]/15 rounded-2xl p-7 flex flex-col"
+                    className="card-glow group w-full text-left h-full bg-[#242764] border border-[#3FE0F2]/15 rounded-2xl p-7 flex flex-col"
                   >
-                    <div className="w-12 h-12 rounded-xl bg-[#62E7EF]/10 border border-[#62E7EF]/25 flex items-center justify-center text-[#62E7EF] group-hover:bg-[#62E7EF]/20 group-hover:shadow-[0_0_20px_rgba(98,231,239,0.3)] transition-all duration-300">
+                    <div className="w-12 h-12 rounded-xl bg-[#3FE0F2]/10 border border-[#3FE0F2]/25 flex items-center justify-center text-[#3FE0F2] group-hover:bg-[#3FE0F2]/20 group-hover:shadow-[0_0_20px_rgba(63,224,242,0.3)] transition-all duration-300">
                       <Icon size={22} />
                     </div>
-                    <h2 className="font-heading mt-5 text-lg font-semibold text-[#EEFBFF] group-hover:text-[#62E7EF] transition-colors duration-300">
+                    <h2 className="font-heading mt-5 text-lg font-semibold text-[#EEFBFF] group-hover:text-[#3FE0F2] transition-colors duration-300">
                       {s.title}
                     </h2>
-                    <p className="mt-3 text-sm text-[#A3C3D9] leading-relaxed flex-1">{s.text}</p>
-                    <span className="mt-5 inline-flex items-center gap-1.5 text-xs font-semibold text-[#5C7D99] group-hover:text-[#62E7EF] transition-colors duration-300">
+                    <p className="mt-3 text-sm text-[#B9C3EC] leading-relaxed flex-1">{s.text}</p>
+                    <span className="mt-5 inline-flex items-center gap-1.5 text-xs font-semibold text-[#7D86C2] group-hover:text-[#3FE0F2] transition-colors duration-300">
                       Solicitar información
                       <ArrowUpRight size={14} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-300" />
                     </span>

@@ -43,7 +43,7 @@ export const Navbar = () => {
       data-testid="main-navbar"
       className={`fixed top-0 inset-x-0 z-50 transition-all duration-500 ${
         solid
-          ? "bg-[#071725]/85 backdrop-blur-xl border-b border-[#62E7EF]/15"
+          ? "bg-[#14163C]/85 backdrop-blur-xl border-b border-[#3FE0F2]/15"
           : "bg-transparent border-b border-transparent"
       }`}
     >
@@ -51,12 +51,9 @@ export const Navbar = () => {
         <Link
           to="/"
           data-testid="navbar-logo-link"
-          className="flex items-center gap-3 group"
+          className="flex items-center group"
         >
-          <Logo size={34} />
-          <span className="font-heading font-bold text-lg tracking-tight text-[#EEFBFF] group-hover:text-[#62E7EF] transition-colors duration-300">
-            Cibermedida
-          </span>
+          <Logo size={46} />
         </Link>
 
         <nav className="hidden lg:flex items-center gap-5" data-testid="navbar-links">
@@ -68,7 +65,7 @@ export const Navbar = () => {
                 to={l.to}
                 data-testid={`nav-link-${l.to.slice(1)}`}
                 className={`text-[13px] transition-colors duration-300 ${
-                  active ? "text-[#62E7EF] font-semibold" : "text-[#A3C3D9] hover:text-[#62E7EF]"
+                  active ? "text-[#3FE0F2] font-semibold" : "text-[#B9C3EC] hover:text-[#3FE0F2]"
                 }`}
               >
                 {l.label}
@@ -89,7 +86,7 @@ export const Navbar = () => {
           <button
             data-testid="nav-contact-cta"
             onClick={() => goToContact(navigate)}
-            className="hidden md:inline-flex items-center text-sm font-semibold text-[#071725] bg-[#62E7EF] rounded-full px-5 py-2.5 hover:bg-[#7DE1E2] hover:shadow-[0_0_24px_rgba(98,231,239,0.4)] transition-all duration-300"
+            className="hidden md:inline-flex items-center text-sm font-semibold text-[#14163C] bg-[#3FE0F2] rounded-full px-5 py-2.5 hover:bg-[#7FEBF8] hover:shadow-[0_0_24px_rgba(63,224,242,0.4)] transition-all duration-300"
           >
             Solicitar información
           </button>
@@ -112,7 +109,7 @@ export const Navbar = () => {
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3 }}
-            className="lg:hidden overflow-hidden bg-[#0A1128] border-b border-[#62E7EF]/20"
+            className="lg:hidden overflow-hidden bg-[#1B1E4E] border-b border-[#3FE0F2]/20"
           >
             <div className="px-6 py-5 flex flex-col gap-4">
               {NAV_LINKS.map((l) => (
@@ -121,7 +118,7 @@ export const Navbar = () => {
                   to={l.to}
                   data-testid={`nav-mobile-link-${l.to.slice(1)}`}
                   className={`text-base transition-colors ${
-                    location.pathname === l.to ? "text-[#62E7EF] font-semibold" : "text-[#A3C3D9] hover:text-[#62E7EF]"
+                    location.pathname === l.to ? "text-[#3FE0F2] font-semibold" : "text-[#B9C3EC] hover:text-[#3FE0F2]"
                   }`}
                 >
                   {l.label}
@@ -130,7 +127,7 @@ export const Navbar = () => {
               <button
                 data-testid="nav-mobile-contact-cta"
                 onClick={() => goToContact(navigate)}
-                className="mt-2 text-sm font-semibold text-[#071725] bg-[#62E7EF] rounded-full px-5 py-3 text-center"
+                className="mt-2 text-sm font-semibold text-[#14163C] bg-[#3FE0F2] rounded-full px-5 py-3 text-center"
               >
                 Solicitar información
               </button>
