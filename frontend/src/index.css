@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    :root {
+        --background: 204 68% 9%;
+        --foreground: 192 100% 97%;
+        --card: 212 64% 17%;
+        --card-foreground: 192 100% 97%;
+        --popover: 212 64% 17%;
+        --popover-foreground: 192 100% 97%;
+        --primary: 183 82% 66%;
+        --primary-foreground: 204 68% 9%;
+        --secondary: 212 64% 17%;
+        --secondary-foreground: 192 100% 97%;
+        --muted: 210 40% 24%;
+        --muted-foreground: 203 34% 75%;
+        --accent: 186 56% 41%;
+        --accent-foreground: 192 100% 97%;
+        --destructive: 0 100% 65%;
+        --destructive-foreground: 0 0% 98%;
+        --border: 183 82% 66%;
+        --input: 210 40% 24%;
+        --ring: 183 82% 66%;
+        --radius: 0.5rem;
+    }
+}
+
+@layer base {
+    * {
+        @apply border-border/15;
+    }
+    html {
+        scroll-behavior: auto;
+    }
+    body {
+        @apply bg-[#071725] text-[#EEFBFF] antialiased;
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        overflow-x: hidden;
+    }
+    ::selection {
+        background: rgba(98, 231, 239, 0.3);
+        color: #EEFBFF;
+    }
+    ::-webkit-scrollbar {
+        width: 10px;
+    }
+    ::-webkit-scrollbar-track {
+        background: #071725;
+    }
+    ::-webkit-scrollbar-thumb {
+        background: #102B49;
+        border-radius: 5px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+        background: #18A6B7;
+    }
+}
+
+.font-heading {
+    font-family: 'Space Grotesk', sans-serif;
+}
+
+.font-mono-cyber {
+    font-family: 'JetBrains Mono', monospace;
+}
+
+.text-glow {
+    text-shadow: 0 0 24px rgba(98, 231, 239, 0.45);
+}
+
+.card-glow {
+    transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+.card-glow:hover {
+    transform: translateY(-4px);
+    border-color: rgba(98, 231, 239, 0.4);
+    box-shadow: 0 12px 40px -12px rgba(98, 231, 239, 0.25);
+}
+
+.grain::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.05;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+@keyframes marquee-scroll {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+}
+
+.marquee-track {
+    animation: marquee-scroll 40s linear infinite;
+}
+
+@keyframes pulse-dot {
+    0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(6, 214, 160, 0.5); }
+    50% { opacity: 0.7; box-shadow: 0 0 0 6px rgba(6, 214, 160, 0); }
+}
+
+.pulse-dot {
+    animation: pulse-dot 2s ease-in-out infinite;
+}
+
+@keyframes scanline {
+    0% { transform: translateY(-100%); }
+    100% { transform: translateY(100%); }
+}
+
+.scanline::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 30%;
+    background: linear-gradient(180deg, transparent, rgba(98, 231, 239, 0.06), transparent);
+    animation: scanline 6s linear infinite;
+    pointer-events: none;
+}
