@@ -7,6 +7,7 @@ import "@/App.css";
 import HomePage from "@/pages/HomePage";
 import WhatIsPage from "@/pages/WhatIsPage";
 import ServicesPage from "@/pages/ServicesPage";
+import SuccessCasesPage from "@/pages/SuccessCasesPage";
 import CompliancePage from "@/pages/CompliancePage";
 import GuidePage from "@/pages/GuidePage";
 import EcosystemPage from "@/pages/EcosystemPage";
@@ -51,6 +52,7 @@ function App() {
             <Route path="/" element={<HomePage />} />
             <Route path="/inteligencia-artificial" element={<WhatIsPage />} />
             <Route path="/servicios" element={<ServicesPage />} />
+            <Route path="/casos-de-exito" element={<SuccessCasesPage />} />
             <Route path="/cumplimiento" element={<CompliancePage />} />
             <Route path="/guia-de-incidentes" element={<GuidePage />} />
             <Route path="/ecosistema" element={<EcosystemPage />} />

@@ -9,6 +9,7 @@ export const IMAGES = {
 export const NAV_LINKS = [
   { label: "Inteligencia Artificial", to: "/inteligencia-artificial" },
   { label: "Servicios", to: "/servicios" },
+  { label: "Casos de éxito", to: "/casos-de-exito" },
   { label: "Cumplimiento", to: "/cumplimiento" },
   { label: "Guía de incidentes", to: "/guia-de-incidentes" },
   { label: "Ecosistema", to: "/ecosistema" },
@@ -265,6 +266,86 @@ export const RISK_RESULTS = {
     text: "Tu perfil combina exposición alta y controles débiles: el escenario favorito de los ataques oportunistas y de las fugas hacia herramientas externas. Recomendamos reforzar la base de seguridad y vigilar de forma continua antes de seguir escalando IA.",
   },
 };
+
+export const CASE_STUDIES = [
+  {
+    name: "Aula Virtual Cibermedida",
+    sector: "Formación",
+    image: "https://images.unsplash.com/photo-1549605659-32d82da3a059?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1OTV8MHwxfHNlYXJjaHw0fHxjeWJlciUyMHNlY3VyaXR5JTIwaGFja2VyJTIwY29kZSUyMHNjcmVlbiUyMGRhcmslMjBwcm9mZXNzaW9uYWwlMjB0ZWFtJTIwdGVjaHxlbnwwfHx8fDE3OTMxNzE2MjR8MA&ixlib=rb-4.1.0&q=85",
+    challenge: "Centros formativos y empresas necesitaban impartir cursos técnicos con seguimiento real del alumnado, sin depender de plataformas genéricas que no se adaptan a sus contenidos ni a sus procesos.",
+    solution: "Diseñamos y operamos un aula virtual propia con cursos, materiales, evaluaciones y panel de seguimiento, integrada con la identidad y los contenidos de cada organización.",
+    result: "Formación continua en marcha con seguimiento por alumno y contenidos actualizables por el propio centro, sin costes de licencia por cambio.",
+    stack: ["Plataforma propia", "SCORM", "Seguimiento formativo"],
+  },
+  {
+    name: "Chatbot conversacional",
+    sector: "Comunicación · IA",
+    image: "https://images.unsplash.com/photo-1510915228340-29c85a43dcfe?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1OTV8MHwxfHNlYXJjaHwyfHxjeWJlciUyMHNlY3VyaXR5JTIwaGFja2VyJTIwY29kZSUyMHNjcmVlbiUyMGRhcmslMjBwcm9mZXNzaW9uYWwlMjB0ZWFtJTIwdGVjaHxlbnwwfHx8fDE3OTMxNzE2MjR8MA&ixlib=rb-4.1.0&q=85",
+    challenge: "Las mismas preguntas repetidas consumían horas del equipo cada semana, y fuera del horario nadie atendía a los visitantes de la web.",
+    solution: "Implantamos un asistente conversacional entrenado con la información de la organización, con respuestas inmediatas y derivación a personas cuando el tema lo requiere.",
+    result: "Atención disponible 24/7 y un equipo liberado de las consultas repetitivas para centrarse en las que sí aportan valor.",
+    stack: ["IA conversacional", "Integración web", "Escalado humano"],
+  },
+  {
+    name: "Signados",
+    sector: "Seguridad",
+    image: "https://images.unsplash.com/photo-1639066648921-82d4500abf1a?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA6MjJ8MHwxfHNlYXJjaHwyfHxjeWJlcnNlY3VyaXR5JTIwbmV0d29yayUyMHNlcnZlciUyMHJvb20lMjBkYXJrJTIwbmVvbiUyMGN5YW4lMjBzaGllbGQlMjBkYXRhJTIwZGVmZW5zZXxlbnwwfHx8fDE3OTMxNzE2MjR8MA&ixlib=rb-4.1.0&q=85",
+    challenge: "Contratos y documentos sensibles circulaban por correo sin garantía de quién los firmaba ni de que no hubieran sido alterados después.",
+    solution: "Creamos Signados, una plataforma de firma digital y certificación segura que aporta validez probatoria a cada documento.",
+    result: "Documentos certificados con evidencia de firma e integridad, listos para tener valor ante cualquier requerimiento.",
+    stack: ["Firma digital", "Certificación", "Trazabilidad"],
+  },
+  {
+    name: "Turismo Cibermedida",
+    sector: "Turismo · IA",
+    image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA6MjJ8MHwxfHNlYXJjaHwxfHxjeWJlcnNlY3VyaXR5JTIwbmV0d29yayUyMHNlcnZlciUyMHJvb20lMjBkYXJrJTIwbmVvbiUyMGN5YW4lMjBzaGllbGQlMjBkYXRhJTIwZGVmZW5zZXxlbnwwfHx8fDE3OTMxNzE2MjR8MA&ixlib=rb-4.1.0&q=85",
+    challenge: "Destinos y negocios turísticos necesitaban ofrecer información útil al visitante sin mantener un equipo contestando las mismas dudas de siempre.",
+    solution: "Desarrollamos una plataforma de promoción turística con mapas interactivos y un asistente inteligente que guía al visitante en tiempo real.",
+    result: "Visitantes mejor informados y una imagen de destino moderna, con contenido gestionable por el propio equipo de turismo.",
+    stack: ["Mapas interactivos", "Asistente IA", "Gestión de contenidos"],
+  },
+  {
+    name: "Markitplace",
+    sector: "Comunicación · IA",
+    image: "https://images.unsplash.com/photo-1680992046615-065f58bcb4d8?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA6MjJ8MHwxfHNlYXJjaHw0fHxjeWJlcnNlY3VyaXR5JTIwbmV0d29yayUyMHNlcnZlciUyMHJvb20lMjBkYXJrJTIwbmVvbiUyMGN5YW4lMjBzaGllbGQlMjBkYXRhJTIwZGVmZW5zZXxlbnwwfHx8fDE3OTMxNzE2MjR8MA&ixlib=rb-4.1.0&q=85",
+    challenge: "Mantener una comunicación activa (noticias, redes, materiales) exigía unas horas que los equipos pequeños simplemente no tienen.",
+    solution: "Construimos Markitplace, una solución de generación de contenidos con IA que produce borradores alineados con el tono de cada organización para revisión humana.",
+    result: "Comunicación constante con supervisión humana: la IA propone y el equipo decide, en una fracción del tiempo anterior.",
+    stack: ["IA generativa", "Flujo de aprobación", "Multicanal"],
+  },
+  {
+    name: "Ikas Txiki — Fútbol Base",
+    sector: "Gestión deportiva",
+    image: "https://images.unsplash.com/photo-1549605659-32d82da3a059?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1OTV8MHwxfHNlYXJjaHw0fHxjeWJlciUyMHNlY3VyaXR5JTIwaGFja2VyJTIwY29kZSUyMHNjcmVlbiUyMGRhcmslMjBwcm9mZXNzaW9uYWwlMjB0ZWFtJTIwdGVjaHxlbnwwfHx8fDE3OTMxNzE2MjR8MA&ixlib=rb-4.1.0&q=85",
+    challenge: "Un club de fútbol base gestionaba equipos, convocatorias y comunicaciones con familias por hojas de cálculo y grupos de mensajería.",
+    solution: "Digitalizamos la organización completa de la actividad: equipos, calendarios, convocatorias y avisos centralizados en una sola plataforma.",
+    result: "Menos coordinación manual, familias informadas al momento y toda la actividad del club ordenada en un único lugar.",
+    stack: ["Gestión deportiva", "Notificaciones", "Calendarios"],
+  },
+];
+
+export const PROCESS_STEPS = [
+  {
+    step: "01",
+    title: "Descubrimiento",
+    text: "Escuchamos cómo trabaja tu organización y localizamos los procesos donde la IA o la digitalización aportan retorno real, con una estimación honesta de esfuerzo e impacto.",
+  },
+  {
+    step: "02",
+    title: "Diseño",
+    text: "Definimos el alcance, las métricas de éxito y los controles de seguridad y cumplimiento antes de escribir la primera línea: nada se construye sin saber cómo se medirá.",
+  },
+  {
+    step: "03",
+    title: "Implantación",
+    text: "Desarrollamos e integramos por hitos, con entregas parciales que puedes probar. Tu equipo participa desde el primer sprint, no en la presentación final.",
+  },
+  {
+    step: "04",
+    title: "Acompañamiento",
+    text: "Formamos a las personas que lo van a usar, medimos los resultados pactados y ajustamos. El proyecto no termina en la entrega: termina cuando funciona.",
+  },
+];
 
 export const LEGAL_PAGES = {
   "aviso-legal": {

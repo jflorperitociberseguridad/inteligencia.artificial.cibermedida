@@ -59,7 +59,7 @@ export const Navbar = () => {
           </span>
         </Link>
 
-        <nav className="hidden lg:flex items-center gap-7" data-testid="navbar-links">
+        <nav className="hidden lg:flex items-center gap-5" data-testid="navbar-links">
           {NAV_LINKS.map((l) => {
             const active = location.pathname === l.to;
             return (
@@ -67,7 +67,7 @@ export const Navbar = () => {
                 key={l.to}
                 to={l.to}
                 data-testid={`nav-link-${l.to.slice(1)}`}
-                className={`text-sm transition-colors duration-300 ${
+                className={`text-[13px] transition-colors duration-300 ${
                   active ? "text-[#62E7EF] font-semibold" : "text-[#A3C3D9] hover:text-[#62E7EF]"
                 }`}
               >

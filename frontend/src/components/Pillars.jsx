@@ -14,8 +14,8 @@ export const Pillars = () => (
       <SectionHeading
         testId="pillars-heading"
         kicker="Cibermedida"
-        title="Tu referencia en ciberseguridad y transformación digital"
-        description="Informar, proteger y formar: hacemos comprensible una transformación que ya redefine cómo trabajan las organizaciones."
+        title="Tu referencia en inteligencia artificial y ciberseguridad"
+        description="Aplicar, proteger y formar: hacemos útil y segura una tecnología que ya redefine cómo trabajan las organizaciones."
       />
       <div className="grid md:grid-cols-3 gap-6">
         {PILLARS.map((p, i) => {

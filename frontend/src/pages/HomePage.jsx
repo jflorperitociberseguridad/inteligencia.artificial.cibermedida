@@ -58,6 +58,30 @@ export default function HomePage() {
         </section>
 
         <RiskQuiz />
+
+        <section data-testid="home-cases-teaser" className="relative bg-[#0A1128] py-20">
+          <div className="max-w-7xl mx-auto px-5 sm:px-8">
+            <Reveal>
+              <Link
+                to="/casos-de-exito"
+                data-testid="home-cases-teaser-link"
+                className="card-glow group flex flex-col sm:flex-row sm:items-center gap-6 bg-[#102B49] border border-[#62E7EF]/15 rounded-2xl p-8 sm:p-10"
+              >
+                <div className="flex-1">
+                  <span className="font-mono-cyber text-[11px] uppercase tracking-[0.25em] text-[#62E7EF]">Casos de éxito</span>
+                  <h2 className="font-heading mt-3 text-2xl sm:text-3xl font-semibold text-[#EEFBFF] group-hover:text-[#62E7EF] transition-colors duration-300 leading-tight">
+                    Aula Virtual, chatbot conversacional, firma digital y más: proyectos reales en producción
+                  </h2>
+                </div>
+                <span className="inline-flex items-center gap-2 text-sm font-semibold text-[#62E7EF] shrink-0">
+                  Ver los proyectos
+                  <ArrowUpRight size={18} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300" />
+                </span>
+              </Link>
+            </Reveal>
+          </div>
+        </section>
+
         <Pillars />
 
         <section data-testid="home-cta-banner" className="relative bg-[#0A1128] py-20 overflow-hidden">

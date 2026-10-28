@@ -28,6 +28,12 @@
 4. Formulario → email a jfloradmin@cibermedida.es
 5. Responsive + animaciones premium (framer-motion, lenis)
 
+## Implementado (2026-10-28, fase 4)
+- Nueva página /casos-de-exito: caso destacado (Aula Virtual) con parallax, grid de 5 proyectos reales del ecosistema (chatbot, Signados, Turismo, Markitplace, Ikas Txiki), línea de proceso en 4 fases y CTA; enlace añadido al header, footer y teaser en portada
+- Diseño reforzado: parallax en imagen destacada, timeline con iconos, copy alineado al enfoque IA en toda la web (pillars incluidos)
+- Nota: los casos usan los productos reales del ecosistema Cibermedida; sin métricas ni nombres de cliente inventados — el usuario puede aportar datos reales para enriquecerlos
+- Verificado: navegación desde header, featured + grid + proceso renderizan, CTA lleva a /contacto con servicio preseleccionado
+
 ## Implementado (2026-10-28, fase 3)
 - REESTRUCTURA: eliminado el blog/Actualidad; cada pestaña del header es ahora una página independiente con react-router: / (inicio), /inteligencia-artificial, /servicios, /cumplimiento, /guia-de-incidentes, /ecosistema, /contacto, /legal/:slug
 - Enfoque IA en toda la web: hero "Inteligencia artificial aplicada y segura", servicios de IA (consultoría, agentes, automatización, formación, IA segura, SOC), cumplimiento con AI Act, test de madurez IA
