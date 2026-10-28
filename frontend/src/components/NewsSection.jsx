@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { AnimatePresence, motion } from "framer-motion";
 import { ArrowUpRight, Clock } from "lucide-react";
 import { NEWS, NEWS_CATEGORIES } from "@/data/content";
@@ -13,6 +14,7 @@ const CATEGORY_STYLES = {
 
 export const NewsSection = () => {
   const [filter, setFilter] = useState("Todo");
+  const navigate = useNavigate();
   const visible = filter === "Todo" ? NEWS : NEWS.filter((n) => n.category === filter);
 
   return (
@@ -54,6 +56,7 @@ export const NewsSection = () => {
                 transition={{ duration: 0.45, delay: i * 0.05 }}
                 className="card-glow group relative bg-[#102B49] border border-[#62E7EF]/15 rounded-2xl overflow-hidden cursor-pointer"
                 data-testid={`news-card-${n.id}`}
+                onClick={() => navigate(`/noticias/${n.id}`)}
               >
                 <div className="relative h-44 overflow-hidden">
                   <img

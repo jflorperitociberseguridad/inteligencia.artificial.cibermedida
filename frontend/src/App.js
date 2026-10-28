@@ -1,20 +1,22 @@
 import { useEffect } from "react";
 import Lenis from "lenis";
+import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import { Toaster } from "sonner";
 import "@/App.css";
-import { Navbar } from "@/components/Navbar";
-import { Hero } from "@/components/Hero";
-import { Marquee } from "@/components/Marquee";
-import { StatsStrip } from "@/components/StatsStrip";
-import { NewsSection } from "@/components/NewsSection";
-import { WhatIs } from "@/components/WhatIs";
-import { Services } from "@/components/Services";
-import { Ethics } from "@/components/Ethics";
-import { IncidentGuide } from "@/components/IncidentGuide";
-import { Ecosystem } from "@/components/Ecosystem";
-import { Pillars } from "@/components/Pillars";
-import { ContactSection } from "@/components/ContactSection";
-import { Footer } from "@/components/Footer";
+import Landing from "@/pages/Landing";
+import NewsArticlePage from "@/pages/NewsArticlePage";
+import LegalPage from "@/pages/LegalPage";
+
+const ScrollToTop = () => {
+  const { pathname } = useLocation();
+  useEffect(() => {
+    if (window.__lenis) {
+      window.__lenis.scrollTo(0, { immediate: true });
+    }
+    window.scrollTo(0, 0);
+  }, [pathname]);
+  return null;
+};
 
 function App() {
   useEffect(() => {
@@ -35,21 +37,14 @@ function App() {
 
   return (
     <div className="bg-[#071725] min-h-screen" data-testid="cibermedida-app">
-      <Navbar />
-      <main>
-        <Hero />
-        <Marquee />
-        <StatsStrip />
-        <NewsSection />
-        <WhatIs />
-        <Services />
-        <Ethics />
-        <IncidentGuide />
-        <Ecosystem />
-        <Pillars />
-        <ContactSection />
-      </main>
-      <Footer />
+      <BrowserRouter>
+        <ScrollToTop />
+        <Routes>
+          <Route path="/" element={<Landing />} />
+          <Route path="/noticias/:id" element={<NewsArticlePage />} />
+          <Route path="/legal/:slug" element={<LegalPage />} />
+        </Routes>
+      </BrowserRouter>
       <Toaster
         position="bottom-right"
         toastOptions={{

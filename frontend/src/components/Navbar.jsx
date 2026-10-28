@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Siren } from "lucide-react";
 import { Logo } from "./Logo";
@@ -17,6 +18,8 @@ export const scrollToSection = (hash) => {
 export const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const location = useLocation();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
@@ -27,7 +30,11 @@ export const Navbar = () => {
   const go = (e, href) => {
     e.preventDefault();
     setOpen(false);
-    scrollToSection(href);
+    if (location.pathname !== "/") {
+      navigate("/", { state: { scrollTo: href } });
+    } else {
+      scrollToSection(href);
+    }
   };
 
   return (
@@ -36,7 +43,9 @@ export const Navbar = () => {
       className={`fixed top-0 inset-x-0 z-50 transition-all duration-500 ${
         scrolled
           ? "bg-[#071725]/85 backdrop-blur-xl border-b border-[#62E7EF]/15"
-          : "bg-transparent border-b border-transparent"
+          : location.pathname !== "/"
+            ? "bg-[#071725]/85 backdrop-blur-xl border-b border-[#62E7EF]/15"
+            : "bg-transparent border-b border-transparent"
       }`}
     >
       <div className="max-w-7xl mx-auto px-5 sm:px-8 flex items-center justify-between h-[72px]">

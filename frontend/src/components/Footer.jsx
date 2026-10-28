@@ -1,4 +1,5 @@
 import { Mail, MapPin } from "lucide-react";
+import { Link } from "react-router-dom";
 import { Logo } from "./Logo";
 import { NAV_LINKS } from "@/data/content";
 import { scrollToSection } from "./Navbar";
@@ -50,8 +51,8 @@ export const Footer = () => (
           </a>
         </div>
         <div className="flex gap-5 mt-6 text-xs text-[#5C7D99]">
-          <a href="#" data-testid="footer-legal-link" className="hover:text-[#62E7EF] transition-colors">Aviso legal</a>
-          <a href="#" data-testid="footer-privacy-link" className="hover:text-[#62E7EF] transition-colors">Política de privacidad</a>
+          <Link to="/legal/aviso-legal" data-testid="footer-legal-link" className="hover:text-[#62E7EF] transition-colors">Aviso legal</Link>
+          <Link to="/legal/politica-privacidad" data-testid="footer-privacy-link" className="hover:text-[#62E7EF] transition-colors">Política de privacidad</Link>
         </div>
       </div>
     </div>

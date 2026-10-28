@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import axios from "axios";
 import { toast } from "sonner";
 import { Send, Loader2, ShieldCheck } from "lucide-react";
@@ -15,6 +15,12 @@ const inputCls =
 export const ContactSection = () => {
   const [form, setForm] = useState(EMPTY);
   const [sending, setSending] = useState(false);
+
+  useEffect(() => {
+    const handler = (e) => setForm((f) => ({ ...f, service: e.detail }));
+    window.addEventListener("ciber:service", handler);
+    return () => window.removeEventListener("ciber:service", handler);
+  }, []);
 
   const set = (k) => (e) => setForm({ ...form, [k]: e.target.value });
 

@@ -28,7 +28,14 @@
 4. Formulario → email a jfloradmin@cibermedida.es
 5. Responsive + animaciones premium (framer-motion, lenis)
 
-## Implementado (2026-10-28)
+## Implementado (2026-10-28, fase 2)
+- Páginas de artículo completas para las 6 noticias (/noticias/:id): imagen, cuerpo con subtítulos, botón compartir (navigator.share / copiar enlace), CTA a contacto y volver a actualidad
+- Páginas legales RGPD (/legal/aviso-legal y /legal/politica-privacidad) enlazadas desde el footer — plantilla profesional, pendiente de datos registrales definitivos del usuario
+- Simulador de riesgo: test de 5 preguntas con barra de progreso, nivel (controlado/moderado/elevado), servicio recomendado y CTA que preselecciona el servicio en el formulario
+- Enrutado con react-router (/, /noticias/:id, /legal/:slug) + scroll suave entre rutas
+- Verificado: flujo quiz completo con prefill del servicio, navegación artículo/legal/footer, email re-test (sigue 401 en preview: clave de plataforma no provisionada)
+
+## Implementado (2026-10-28, fase 1)
 - Hero cinético con reveal línea a línea y parallax + indicador "SOC activo"
 - Marquee editorial, strip de métricas con contadores animados
 - Sección Actualidad: 6 noticias originales con filtro (Todo/Normativa/Amenazas/Guías/Noticias)
@@ -42,8 +49,7 @@
 - Verificado: curl health/contact OK; screenshots 375/768/1366; envío e2e del formulario con toast
 
 ## Pendiente / limitaciones
-- P0: verificar entrega de email real — la clave EMERGENT_EMAIL_KEY no está provisionada en preview (proxy devuelve 401). Las solicitudes se guardan en Mongo igualmente. Re-verificar tras publicar o con soporte
-- P1: páginas de detalle para cada noticia
-- P1: páginas legales (aviso legal, política de privacidad) con contenido real
+- P0: verificar entrega de email real — re-test 2026-10-28: el proxy sigue devolviendo 401 en preview (EMERGENT_EMAIL_KEY no provisionada en este entorno). Las solicitudes se guardan en Mongo igualmente. Re-verificar tras publicar o con soporte
+- P1: datos registrales definitivos (razón social, NIF, domicilio) en aviso legal y privacidad
 - P2: blog auto-gestionado con panel admin (si el usuario cambia de opinión)
 - P2: SEO avanzado (sitemap, JSON-LD, OG image dedicada)
