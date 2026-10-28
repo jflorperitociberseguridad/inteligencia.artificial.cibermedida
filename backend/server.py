@@ -201,6 +201,86 @@ async def submit_contact(form: ContactForm):
     return {"status": "success", "email_id": email_id, "email_sent": email_sent}
 
 
+import json
+from emergentintegrations.llm.chat import LlmChat, UserMessage, TextDelta, StreamDone
+from fastapi.responses import StreamingResponse
+
+EMERGENT_LLM_KEY = os.environ.get("EMERGENT_LLM_KEY", "")
+
+CHAT_SYSTEM = (
+    "Eres el asistente virtual de Cibermedida, empresa española (Cantabria) de inteligencia artificial, "
+    "ciberseguridad y transformación digital. Respondes en español, con tono profesional, claro y cercano, "
+    "en un máximo de 120 palabras por respuesta. Servicios: consultoría e implantación de IA, agentes y "
+    "chatbots conversacionales, automatización de procesos con IA, formación en inteligencia artificial, "
+    "IA segura y gobierno del dato (AI Act, RGPD), y ciberseguridad con SOC gestionado 24/7 (ENS, ISO 27001, "
+    "NIS2). También tienen un ecosistema propio: Aula Virtual, Signados, Markitplace, Consulting, Turismo "
+    "y un chatbot conversacional. Normas estrictas: nunca inventes precios ni plazos; para presupuestos "
+    "deriva al formulario de contacto de la web; si el usuario dice que sufre un ataque ahora mismo, dile "
+    "que no apague los equipos ni borre nada y que pulse el botón rojo '¿Ataque en curso?' para priorizar "
+    "su solicitud; el email de contacto es jfloradmin@cibermedida.es; si la pregunta no tiene relación con "
+    "inteligencia artificial, ciberseguridad, formación o los servicios de Cibermedida, responde brevemente "
+    "que solo puedes ayudar con esos temas."
+)
+
+
+class ChatRequest(BaseModel):
+    session_id: str = Field(min_length=6, max_length=64)
+    message: str = Field(min_length=1, max_length=1000)
+
+
+@api_router.post("/chat")
+async def chat(req: ChatRequest):
+    history = await db.chat_messages.find(
+        {"session_id": req.session_id}, {"_id": 0}
+    ).sort("created_at", 1).to_list(20)
+    transcript = "\n".join(
+        f"{'Usuario' if m['role'] == 'user' else 'Asistente'}: {m['content']}" for m in history[-10:]
+    )
+    prompt = req.message if not transcript else (
+        f"Conversación hasta ahora:\n{transcript}\n\n"
+        f"Nueva pregunta del usuario: {req.message}\n\nResponde solo a la nueva pregunta."
+    )
+    now = datetime.now(timezone.utc).isoformat()
+    await db.chat_messages.insert_one(
+        {"session_id": req.session_id, "role": "user", "content": req.message, "created_at": now}
+    )
+
+    async def event_generator():
+        full = []
+        try:
+            llm = LlmChat(
+                api_key=EMERGENT_LLM_KEY,
+                session_id=f"faq-{req.session_id}-{uuid.uuid4()}",
+                system_message=CHAT_SYSTEM,
+            ).with_model("openai", "gpt-5.4")
+            async for ev in llm.stream_message(UserMessage(text=prompt)):
+                if isinstance(ev, TextDelta):
+                    full.append(ev.content)
+                    yield f"data: {json.dumps({'delta': ev.content})}\n\n"
+                elif isinstance(ev, StreamDone):
+                    break
+        except Exception as e:
+            logger.error(f"Chat LLM error: {str(e)}")
+            yield f"data: {json.dumps({'error': 'El asistente no está disponible ahora mismo. Inténtalo en unos minutos.'})}\n\n"
+        answer = "".join(full).strip()
+        if answer:
+            await db.chat_messages.insert_one(
+                {
+                    "session_id": req.session_id,
+                    "role": "assistant",
+                    "content": answer,
+                    "created_at": datetime.now(timezone.utc).isoformat(),
+                }
+            )
+        yield "data: [DONE]\n\n"
+
+    return StreamingResponse(
+        event_generator(),
+        media_type="text/event-stream",
+        headers={"Cache-Control": "no-cache", "X-Accel-Buffering": "no"},
+    )
+
+
 app.include_router(api_router)
 
 app.add_middleware(

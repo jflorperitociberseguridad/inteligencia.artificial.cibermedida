@@ -28,6 +28,13 @@
 4. Formulario → email a jfloradmin@cibermedida.es
 5. Responsive + animaciones premium (framer-motion, lenis)
 
+## Implementado (2026-10-28, fase 3)
+- REESTRUCTURA: eliminado el blog/Actualidad; cada pestaña del header es ahora una página independiente con react-router: / (inicio), /inteligencia-artificial, /servicios, /cumplimiento, /guia-de-incidentes, /ecosistema, /contacto, /legal/:slug
+- Enfoque IA en toda la web: hero "Inteligencia artificial aplicada y segura", servicios de IA (consultoría, agentes, automatización, formación, IA segura, SOC), cumplimiento con AI Act, test de madurez IA
+- SEO completo (skill farm-seo-setup): title/description OG/Twitter en español, JSON-LD Organization+FAQPage, robots.txt con crawlers IA, llms.txt, noscript real, react-helmet-async con meta por ruta. Pendiente dominio de producción para canonical/sitemap/og:image
+- Chatbot IA con streaming SSE (gpt-5.4, Universal Key), historial en MongoDB, chips de FAQ. BLOQUEADO: la Universal Key devuelve "API key is inactive" (saldo/cuenta) — el usuario debe recargar en Profile → Manage plan → Universal Key
+- Verificado: navegación por las 5 páginas, quiz→contacto con prefill entre páginas, robots/llms servidos como text/plain, chat abre y degrada con mensaje claro
+
 ## Implementado (2026-10-28, fase 2)
 - Páginas de artículo completas para las 6 noticias (/noticias/:id): imagen, cuerpo con subtítulos, botón compartir (navigator.share / copiar enlace), CTA a contacto y volver a actualidad
 - Páginas legales RGPD (/legal/aviso-legal y /legal/politica-privacidad) enlazadas desde el footer — plantilla profesional, pendiente de datos registrales definitivos del usuario

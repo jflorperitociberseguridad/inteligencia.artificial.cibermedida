@@ -1,14 +1,16 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { AnimatePresence, motion } from "framer-motion";
 import { ShieldQuestion, ArrowRight, RotateCcw, CheckCircle2 } from "lucide-react";
 import { RISK_QUESTIONS, RISK_RESULTS } from "@/data/content";
 import { SectionHeading } from "./Reveal";
-import { scrollToSection } from "./Navbar";
+import { goToContact } from "./Navbar";
 
 export const RiskQuiz = () => {
   const [stage, setStage] = useState("intro");
   const [current, setCurrent] = useState(0);
   const [score, setScore] = useState(0);
+  const navigate = useNavigate();
 
   const start = () => {
     setStage("quiz");
@@ -31,19 +33,14 @@ export const RiskQuiz = () => {
   const result = RISK_RESULTS[level];
   const progress = stage === "quiz" ? ((current + 1) / RISK_QUESTIONS.length) * 100 : stage === "result" ? 100 : 0;
 
-  const goContact = () => {
-    window.dispatchEvent(new CustomEvent("ciber:service", { detail: result.service }));
-    scrollToSection("#contacto");
-  };
-
   return (
     <section id="simulador" data-testid="risk-quiz-section" className="relative bg-[#071725] py-24 sm:py-32 overflow-hidden">
       <div className="absolute inset-0 pointer-events-none" style={{ background: "radial-gradient(ellipse at 80% 20%, rgba(98,231,239,0.08) 0%, rgba(7,23,37,0) 55%)" }} />
       <div className="relative max-w-4xl mx-auto px-5 sm:px-8">
         <SectionHeading
           testId="risk-quiz-heading"
-          kicker="Simulador de riesgo"
-          title="¿En qué punto está la seguridad de tu empresa?"
+          kicker="Test de madurez"
+          title="¿Preparada tu empresa para la IA?"
           description="Cinco preguntas, dos minutos y una recomendación honesta: sin registro, sin letra pequeña."
         />
 
@@ -79,9 +76,9 @@ export const RiskQuiz = () => {
                 data-testid="risk-quiz-intro"
               >
                 <ShieldQuestion size={44} className="mx-auto text-[#62E7EF]" />
-                <h3 className="font-heading mt-5 text-2xl font-semibold text-[#EEFBFF]">Mide tu exposición real</h3>
+                <h2 className="font-heading mt-5 text-2xl font-semibold text-[#EEFBFF]">Mide tu nivel de preparación</h2>
                 <p className="mt-3 text-sm sm:text-base text-[#A3C3D9] leading-relaxed max-w-lg mx-auto">
-                  Responde sobre formación, copias de seguridad, accesos y planes de respuesta. Al terminar sabrás tu nivel de riesgo y qué servicio encaja contigo.
+                  Responde sobre uso de IA, control de datos, formación y seguridad. Al terminar sabrás tu nivel y qué servicio encaja contigo.
                 </p>
                 <button
                   data-testid="risk-quiz-start-button"
@@ -137,16 +134,16 @@ export const RiskQuiz = () => {
                 >
                   {result.label}
                 </span>
-                <h3 className="font-heading mt-5 text-2xl font-semibold text-[#EEFBFF]">
+                <h2 className="font-heading mt-5 text-2xl font-semibold text-[#EEFBFF]">
                   Servicio recomendado: <span style={{ color: result.color }}>{result.service}</span>
-                </h3>
+                </h2>
                 <p className="mt-4 text-sm sm:text-base text-[#A3C3D9] leading-relaxed max-w-xl mx-auto" data-testid="risk-quiz-result-text">
                   {result.text}
                 </p>
                 <div className="mt-8 flex flex-wrap justify-center gap-4">
                   <button
                     data-testid="risk-quiz-contact-cta"
-                    onClick={goContact}
+                    onClick={() => goToContact(navigate, result.service)}
                     className="inline-flex items-center gap-2 text-sm font-semibold text-[#071725] bg-[#62E7EF] rounded-full px-7 py-3.5 hover:bg-[#7DE1E2] hover:shadow-[0_0_28px_rgba(98,231,239,0.4)] transition-all duration-300"
                   >
                     <CheckCircle2 size={16} /> Solicitar este servicio

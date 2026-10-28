@@ -1,0 +1,25 @@
+# Cibermedida
+
+> Cibermedida es una empresa española de ciberseguridad y transformación digital con sede en Cantabria. Protege, forma y transforma empresas, centros formativos y administraciones públicas.
+
+## Servicios
+
+- Auditoría y pentesting: evaluación de infraestructura con técnicas de ataque reales y plan de corrección priorizado por riesgo.
+- SOC gestionado 24/7: monitorización continua de redes, equipos y aplicaciones con detección y contención de amenazas.
+- Cumplimiento normativo: adecuación a ENS, ISO 27001, NIS2 y RGPD con análisis de brechas, documentación y evidencias.
+- Formación y concienciación: programas prácticos para plantillas y equipos directivos, con phishing simulado.
+- Firma digital y evidencias: certificación segura de documentos con valor probatorio.
+- Consultoría de IA segura: adopción de inteligencia artificial con gobierno del dato y cumplimiento normativo.
+
+## Contenidos del sitio
+
+- Actualidad: análisis breves sobre normativa (NIS2, ENS), amenazas (ransomware, phishing con IA) y guías prácticas.
+- Guía práctica ante incidentes: protocolo de cuatro pasos (contención, evidencias, notificación legal a la AEPD, recuperación).
+- Simulador de riesgo: test de cinco preguntas que evalúa el nivel de exposición de una empresa y recomienda un servicio.
+- Ecosistema: Aula Virtual, Signados, Markitplace, Consulting, Turismo y chatbot conversacional.
+
+## Contacto
+
+- Email: jfloradmin@cibermedida.es
+- Ubicación: Cantabria, España
+- Formulario de contacto disponible en la página principal.

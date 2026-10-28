@@ -1,27 +1,29 @@
 import { useRef } from "react";
+import { useNavigate } from "react-router-dom";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { ArrowRight, ShieldCheck } from "lucide-react";
+import { ArrowRight, Sparkles } from "lucide-react";
 import { IMAGES } from "@/data/content";
-import { scrollToSection } from "./Navbar";
+import { scrollToSection, goToContact } from "./Navbar";
 
 const LINES = [
-  { text: "Ciberseguridad", accent: false },
-  { text: "y transformación digital", accent: true },
+  { text: "Inteligencia artificial", accent: false },
+  { text: "aplicada y segura", accent: true },
   { text: "para tu organización", accent: false },
 ];
 
 export const Hero = () => {
   const ref = useRef(null);
+  const navigate = useNavigate();
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end start"] });
   const bgY = useTransform(scrollYProgress, [0, 1], ["0%", "25%"]);
   const fade = useTransform(scrollYProgress, [0, 0.7], [1, 0]);
 
   return (
-    <section id="inicio" ref={ref} data-testid="hero-section" className="relative min-h-screen flex items-center overflow-hidden grain">
+    <section ref={ref} data-testid="hero-section" className="relative min-h-screen flex items-center overflow-hidden grain">
       <motion.div style={{ y: bgY }} className="absolute inset-0 scale-110">
         <img
           src={IMAGES.hero}
-          alt="Infraestructura de red protegida"
+          alt="Infraestructura tecnológica de inteligencia artificial"
           className="w-full h-full object-cover opacity-25"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-[#071725]/70 via-[#071725]/85 to-[#071725]" />
@@ -37,7 +39,7 @@ export const Hero = () => {
         >
           <span className="pulse-dot inline-block w-2 h-2 rounded-full bg-[#06D6A0]" data-testid="hero-status-dot" />
           <span className="font-mono-cyber text-xs uppercase tracking-[0.25em] text-[#62E7EF]" data-testid="hero-status-text">
-            Sistemas protegidos · SOC activo
+            IA en producción · SOC activo
           </span>
         </motion.div>
 
@@ -63,9 +65,9 @@ export const Hero = () => {
           className="mt-7 max-w-xl text-base sm:text-lg text-[#A3C3D9] leading-relaxed"
           data-testid="hero-subtitle"
         >
-          La guía práctica de la seguridad digital en España: protegemos empresas,
-          centros formativos y administraciones con auditoría, vigilancia continua
-          y formación que convierte a las personas en la primera línea de defensa.
+          Ayudamos a empresas, centros formativos y administraciones a adoptar la
+          inteligencia artificial con retorno real: consultoría, agentes,
+          automatización y formación, siempre sobre una base de ciberseguridad sólida.
         </motion.p>
 
         <motion.div
@@ -76,19 +78,19 @@ export const Hero = () => {
         >
           <button
             data-testid="hero-cta-audit"
-            onClick={() => scrollToSection("#contacto")}
+            onClick={() => goToContact(navigate, "Consultoría e implantación de IA")}
             className="inline-flex items-center gap-2 text-sm font-semibold text-[#071725] bg-[#62E7EF] rounded-full px-7 py-3.5 hover:bg-[#7DE1E2] hover:shadow-[0_0_32px_rgba(98,231,239,0.45)] transition-all duration-300 group"
           >
-            Solicitar auditoría 360°
+            Solicitar consultoría de IA
             <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform duration-300" />
           </button>
           <button
             data-testid="hero-cta-guide"
-            onClick={() => scrollToSection("#guia")}
+            onClick={() => scrollToSection("#simulador")}
             className="inline-flex items-center gap-2 text-sm font-semibold text-[#EEFBFF] border border-[#62E7EF]/40 rounded-full px-7 py-3.5 hover:border-[#62E7EF] hover:bg-[#62E7EF]/10 transition-all duration-300"
           >
-            <ShieldCheck size={16} className="text-[#62E7EF]" />
-            Ver guía de incidentes
+            <Sparkles size={16} className="text-[#62E7EF]" />
+            Hacer el test de madurez
           </button>
         </motion.div>
       </motion.div>

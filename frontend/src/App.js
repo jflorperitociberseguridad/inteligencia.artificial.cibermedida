@@ -1,11 +1,18 @@
 import { useEffect } from "react";
 import Lenis from "lenis";
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
+import { HelmetProvider } from "react-helmet-async";
 import { Toaster } from "sonner";
 import "@/App.css";
-import Landing from "@/pages/Landing";
-import NewsArticlePage from "@/pages/NewsArticlePage";
+import HomePage from "@/pages/HomePage";
+import WhatIsPage from "@/pages/WhatIsPage";
+import ServicesPage from "@/pages/ServicesPage";
+import CompliancePage from "@/pages/CompliancePage";
+import GuidePage from "@/pages/GuidePage";
+import EcosystemPage from "@/pages/EcosystemPage";
+import ContactPage from "@/pages/ContactPage";
 import LegalPage from "@/pages/LegalPage";
+import { ChatWidget } from "@/components/ChatWidget";
 
 const ScrollToTop = () => {
   const { pathname } = useLocation();
@@ -37,14 +44,22 @@ function App() {
 
   return (
     <div className="bg-[#071725] min-h-screen" data-testid="cibermedida-app">
-      <BrowserRouter>
-        <ScrollToTop />
-        <Routes>
-          <Route path="/" element={<Landing />} />
-          <Route path="/noticias/:id" element={<NewsArticlePage />} />
-          <Route path="/legal/:slug" element={<LegalPage />} />
-        </Routes>
-      </BrowserRouter>
+      <HelmetProvider>
+        <BrowserRouter>
+          <ScrollToTop />
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/inteligencia-artificial" element={<WhatIsPage />} />
+            <Route path="/servicios" element={<ServicesPage />} />
+            <Route path="/cumplimiento" element={<CompliancePage />} />
+            <Route path="/guia-de-incidentes" element={<GuidePage />} />
+            <Route path="/ecosistema" element={<EcosystemPage />} />
+            <Route path="/contacto" element={<ContactPage />} />
+            <Route path="/legal/:slug" element={<LegalPage />} />
+          </Routes>
+        </BrowserRouter>
+      </HelmetProvider>
+      <ChatWidget />
       <Toaster
         position="bottom-right"
         toastOptions={{

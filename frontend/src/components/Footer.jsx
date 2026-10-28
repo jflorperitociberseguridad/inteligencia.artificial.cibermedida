@@ -1,8 +1,7 @@
-import { Mail, MapPin } from "lucide-react";
 import { Link } from "react-router-dom";
+import { Mail, MapPin } from "lucide-react";
 import { Logo } from "./Logo";
 import { NAV_LINKS } from "@/data/content";
-import { scrollToSection } from "./Navbar";
 
 export const Footer = () => (
   <footer data-testid="main-footer" className="bg-[#071725] border-t border-[#62E7EF]/15 pt-16 pb-8">
@@ -13,31 +12,29 @@ export const Footer = () => (
           <span className="font-heading font-bold text-lg text-[#EEFBFF]">Cibermedida</span>
         </div>
         <p className="mt-4 text-sm text-[#5C7D99] leading-relaxed max-w-xs">
-          Ciberseguridad y transformación digital para empresas, centros formativos y administraciones públicas.
+          Inteligencia artificial, ciberseguridad y transformación digital para empresas, centros formativos y administraciones públicas.
         </p>
       </div>
       <div>
         <h3 className="font-mono-cyber text-xs uppercase tracking-[0.25em] text-[#62E7EF] mb-5">Secciones</h3>
         <nav className="flex flex-col gap-3" data-testid="footer-links">
           {NAV_LINKS.map((l) => (
-            <a
-              key={l.href}
-              href={l.href}
-              data-testid={`footer-link-${l.href.slice(1)}`}
-              onClick={(e) => { e.preventDefault(); scrollToSection(l.href); }}
+            <Link
+              key={l.to}
+              to={l.to}
+              data-testid={`footer-link-${l.to.slice(1)}`}
               className="text-sm text-[#A3C3D9] hover:text-[#62E7EF] transition-colors duration-300 w-fit"
             >
               {l.label}
-            </a>
+            </Link>
           ))}
-          <a
-            href="#contacto"
+          <Link
+            to="/contacto"
             data-testid="footer-link-contacto"
-            onClick={(e) => { e.preventDefault(); scrollToSection("#contacto"); }}
             className="text-sm text-[#A3C3D9] hover:text-[#62E7EF] transition-colors duration-300 w-fit"
           >
             Contacto
-          </a>
+          </Link>
         </nav>
       </div>
       <div>
@@ -61,7 +58,7 @@ export const Footer = () => (
         © 2026 Cibermedida. Todos los derechos reservados.
       </span>
       <span className="font-mono-cyber text-[10px] uppercase tracking-[0.25em] text-[#5C7D99]">
-        Proteger · Formar · Transformar
+        IA · Proteger · Formar · Transformar
       </span>
     </div>
   </footer>

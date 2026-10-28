@@ -17,9 +17,11 @@ export const ContactSection = () => {
   const [sending, setSending] = useState(false);
 
   useEffect(() => {
-    const handler = (e) => setForm((f) => ({ ...f, service: e.detail }));
-    window.addEventListener("ciber:service", handler);
-    return () => window.removeEventListener("ciber:service", handler);
+    const preselected = sessionStorage.getItem("ciber_service");
+    if (preselected) {
+      setForm((f) => ({ ...f, service: preselected }));
+      sessionStorage.removeItem("ciber_service");
+    }
   }, []);
 
   const set = (k) => (e) => setForm({ ...form, [k]: e.target.value });
@@ -58,13 +60,13 @@ export const ContactSection = () => {
             testId="contact-heading"
             kicker="Contacto directo"
             title="Solicita información o una evaluación inicial"
-            description="Cuéntanos qué necesitas proteger y te proponemos los primeros pasos, sin compromiso. Si has sufrido un ataque, indícalo en el mensaje y priorizaremos tu solicitud."
+            description="Cuéntanos qué quieres conseguir con la IA y te proponemos los primeros pasos, sin compromiso. Si has sufrido un ataque, indícalo en el mensaje y priorizaremos tu solicitud."
           />
           <Reveal delay={0.1}>
             <div className="flex items-start gap-4 bg-[#102B49] border border-[#62E7EF]/15 rounded-2xl p-6" data-testid="contact-assurance-card">
               <ShieldCheck size={24} className="text-[#06D6A0] shrink-0 mt-0.5" />
               <div>
-                <h3 className="font-heading text-base font-semibold text-[#EEFBFF]">Confidencialidad garantizada</h3>
+                <h2 className="font-heading text-base font-semibold text-[#EEFBFF]">Confidencialidad garantizada</h2>
                 <p className="mt-1 text-sm text-[#A3C3D9] leading-relaxed">
                   Toda la información que compartas se trata con confidencialidad y conforme al RGPD. Nunca te pediremos contraseñas ni datos bancarios por email.
                 </p>

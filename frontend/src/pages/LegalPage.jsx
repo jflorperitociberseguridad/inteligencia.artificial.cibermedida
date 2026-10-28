@@ -2,6 +2,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import { ArrowLeft } from "lucide-react";
 import { LEGAL_PAGES } from "@/data/content";
+import { Seo } from "@/components/Seo";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 
@@ -17,6 +18,7 @@ export default function LegalPage() {
 
   return (
     <div className="bg-[#071725] min-h-screen" data-testid="legal-page">
+      <Seo title={`${page.title} | Cibermedida`} description={`${page.title} de Cibermedida. ${page.updated}.`} />
       <Navbar />
       <main className="pt-32 pb-24">
         <div className="max-w-3xl mx-auto px-5 sm:px-8">
